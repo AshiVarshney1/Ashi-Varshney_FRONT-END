@@ -1,0 +1,11 @@
+Here are the changes that I made to the component:
+
+1)The onClickHandler prop is now properly passed to the li element in the SingleListItem component. The onClick event handler is now assigned with a useCallback hook, which references the onClickHandler and index props. This ensures that the onClick handler is not re-created on every render and is only created once during initialization.
+
+2)The isSelected prop of SingleListItem component is now being properly passed. The isSelected prop is now correctly compared with the current index of the list item, rather than the selectedIndex state value.
+
+3)The selectedIndex state is now initialized with a default value of null in the List component. This ensures that the component does not break if the items prop is null or undefined.
+
+4)The propTypes definition of the items prop in the List component is now correct. The arrayOf method of PropTypes is now correctly invoked, and the shape of the items prop is defined with the shape method.
+
+5)The key prop is now assigned to each list item in the items.map() function. This helps React to track the individual items in the list and improve performance by avoiding unnecessary re-renders.
